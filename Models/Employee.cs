@@ -9,10 +9,13 @@ namespace TTSSCoreMVC.Models
     public class Employee
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage = "FirstName field is required.")]
         public string FirstName { get; set; }
+
         [Required(ErrorMessage = "LastName field is required.")]
         public string LastName { get; set; }
+
         [Required(ErrorMessage = "Please provide email address.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
