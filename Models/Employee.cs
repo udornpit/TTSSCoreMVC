@@ -19,8 +19,11 @@ namespace TTSSCoreMVC.Models
         [Required(ErrorMessage = "Please provide email address.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        
         public string Phone { get; set; }
+        
         public string Address { get; set; }
+        
         [DataType(DataType.DateTime)]
         public DateTime Created_at { get; set; } = DateTime.Now;
     }
