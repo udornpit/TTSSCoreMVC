@@ -92,5 +92,22 @@ namespace TTSSCoreMVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null || id <= 0)
+            {
+                return BadRequest();
+            }
+
+            var emp = _context.Employees.FirstOrDefault(e => e.Id == id);
+
+            if (emp == null)
+            {
+                return NotFound();
+            }
+
+            return View(emp);
+        }
     }
 }
